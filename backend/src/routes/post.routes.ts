@@ -14,7 +14,11 @@ import {
 import { isAuth } from "../middlewares/jwt-auth";
 
 router.post("/api/post", isAuth, postPost);
-router.get("/api/post", isAuth, getUserPosts);
+router.get(
+    "/api/post",
+    // isAuth,
+    getUserPosts
+);
 router.get("/api/post/lastpublishedpost", isAuth, getLastPublishedPost);
 router.get("/api/post/friendsposts", isAuth, getAllFriendsPosts);
 router.post("/api/post/likepost", isAuth, postLikePost);
